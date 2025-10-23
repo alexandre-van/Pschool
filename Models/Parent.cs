@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Pschool.Models
 {
-    public class Parents
+    public class Parent
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "First name is required")]
