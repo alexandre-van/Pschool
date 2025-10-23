@@ -5,19 +5,19 @@ namespace Pschool.Models
     public class Students
     {
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "First name is required")]
         public string FirstName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Last name is required")]
         public string LastName { get; set; }
-        [Required]
         public string? Username { get; set; }
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid email address format")]
         public string Email { get; set; }
-        [Required]
         public string? HomeAddress { get; set; }
         public string? Phone1 { get; set; }
         public string? WorkPhone { get; set; }
         public string? HomePhone { get; set; }
-        public string? Siblings { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Siblings are required")]
+        public string Siblings { get; set; }
     }
 }
