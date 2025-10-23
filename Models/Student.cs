@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace Pschool.Models
 {
@@ -19,5 +20,7 @@ namespace Pschool.Models
         public string? HomePhone { get; set; }
         [Required(ErrorMessage = "Siblings are required")]
         public string Siblings { get; set; }
+
+        public ICollection<Parent> Parents { get; set; } = new List<Parent>();
     }
 }

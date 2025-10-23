@@ -1,3 +1,6 @@
+using Microsoft.Extensions.Options;
+using Pschool.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

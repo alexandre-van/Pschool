@@ -20,5 +20,6 @@ namespace Pschool.Models
         [Required(ErrorMessage = "Siblings are required")]
         public string Siblings { get; set; }
 
+        public ICollection<Student> Students { get; set; } = new List<Student>();
     }
 }
