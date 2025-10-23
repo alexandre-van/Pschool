@@ -11,6 +11,6 @@ namespace Pschool.Data
         }
 
         DbSet<Student> Students { get; set; }
-        DbSet<Parent> Parents { get; set; }
+        public DbSet<Parent> Parents { get; set; }
     }
 }
