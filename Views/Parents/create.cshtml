@@ -1,0 +1,28 @@
+@model Pschool.Models.Parent
+
+<div class="container">
+    <h2>Add Parent</h2>
+    <form asp-action="Create" method="post">
+        <div>
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName"/>
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName"/>
+            <label asp-for="Username"></label>
+            <input asp-for="Username"/>
+            <label asp-for="Email"></label>
+            <input asp-for="Email"/>
+            <label asp-for="HomeAddress"></label>
+            <input asp-for="HomeAddress"/>
+            <label asp-for="Phone1"></label>
+            <input asp-for="Phone1"/>
+            <label asp-for="WorkPhone"></label>
+            <input asp-for="WorkPhone"/>
+            <label asp-for="HomePhone"></label>
+            <input asp-for="HomePhone"/>
+            <label asp-for="Siblings"></label>
+            <input asp-for="Siblings"/>
+            <button type="submit">Add Parent</button>
+        </div>
+    </form>
+</div>

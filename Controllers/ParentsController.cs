@@ -15,5 +15,9 @@ namespace Pschool.Controllers
             var parents = _context.Parents.ToList();
             return View(parents);
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
