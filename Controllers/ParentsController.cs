@@ -3,19 +3,20 @@ using Pschool.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Pschool.Data.Services;
 
 namespace Pschool.Controllers
 {
     public class ParentsController : Controller
     {
-        private readonly PschoolContext _context;
-        public ParentsController(PschoolContext context)
+        private readonly IParentsService _parentsService;
+        public ParentsController(IParentsService parentsService)
         {
-            _context = context;
+            _parentsService = parentsService;
         }
         public async Task<IActionResult> Index()
         {
-            var parents = await _context.Parents.ToListAsync();
+            var parents = await _parentsService.GetAll();
             return View(parents);
         }
         public IActionResult Create()
@@ -27,8 +28,7 @@ namespace Pschool.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Parents.Add(parent);
-                await _context.SaveChangesAsync();
+                await _parentsService.Add(parent);
                 return RedirectToAction("Index");
             }
             return View();

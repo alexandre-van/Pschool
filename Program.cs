@@ -1,12 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Pschool.Data;
+using Pschool.Data.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<PschoolContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+builder.Services.AddScoped<IParentsService, ParentsService>();
 
 var app = builder.Build();
 
